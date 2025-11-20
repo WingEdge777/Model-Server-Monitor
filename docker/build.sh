@@ -1,0 +1,1 @@
+docker build --network=host -t wingedge777/momor:latest -f dockerfile .
