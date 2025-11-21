@@ -24,15 +24,15 @@ RUN uv pip install requests ipython
 
 # grafana
 RUN cd /tmp && apt-get install -y adduser libfontconfig1 musl \
-    && wget -q https://dl.grafana.com/grafana/release/12.2.1/grafana_12.2.1_18655849634_linux_amd64.deb \
-    && dpkg -i grafana_12.2.1_18655849634_linux_amd64.deb \
+    && wget -q https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.deb \
+    && dpkg -i grafana_12.3.0_19497075765_linux_amd64.deb \
     && rm -rf /tmp/*
 
 # telegraf
 RUN cd /tmp && mkdir -p /etc/apt/sources.list.d && curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key \
     && cat influxdata-archive.key  | gpg --dearmor  | tee /etc/apt/keyrings/influxdata-archive.gpg > /dev/null \
     && echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | tee /etc/apt/sources.list.d/influxdata.list \
-    && apt-get update && apt-get install telegraf \
+    && apt-get update && apt-get install telegraf -y \
     && apt clean
     
 # influxdb3
