@@ -1,0 +1,1 @@
+influxdb3 serve --node-id my_node_name --object-store file --data-dir ./data > influxdb.log 2>&1 &

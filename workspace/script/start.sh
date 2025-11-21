@@ -1,0 +1,1 @@
+bash ./script/init.sh
