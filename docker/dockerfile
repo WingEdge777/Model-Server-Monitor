@@ -8,7 +8,7 @@ ADD external-files/uv.toml /root/.config/uv/uv.toml
 ENV DEBIAN_FRONTEND=noninteractive
 RUN echo 'tzdata tzdata/Areas select Asia' | debconf-set-selections \ 
     && echo 'tzdata tzdata/Zones/Asia select Shanghai' | debconf-set-selections \ 
-    && apt update && apt install -y tzdata iputils-ping nginx build-essential cmake git curl vim wget zip gdb ccache software-properties-common apt-transport-https mysql-server \ 
+    && apt update && apt install -y tzdata git curl vim wget mysql-server gnupg \ 
     && curl -LsSf https://astral.sh/uv/install.sh | sh \ 
     && /root/.local/bin/uv venv /opt/venv --python 3.12 \ 
     && rm -f /usr/bin/python3 /usr/bin/python3-config /usr/bin/pip \ 
@@ -33,14 +33,15 @@ RUN cd /tmp && mkdir -p /etc/apt/sources.list.d && curl --silent --location -O h
     && cat influxdata-archive.key  | gpg --dearmor  | tee /etc/apt/keyrings/influxdata-archive.gpg > /dev/null \
     && echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | tee /etc/apt/sources.list.d/influxdata.list \
     && apt-get update && apt-get install telegraf -y \
-    && apt clean
+    && apt clean \
+    && rm /tmp/*
     
-# influxdb3
-RUN cd /tmp &&mkdir -p /opt/influxdb3/ && curl --silent -LO "https://dl.influxdata.com/influxdb/releases/influxdb3-core-3.6.0_linux_amd64.tar.gz" \
-    && tar -C /opt/influxdb3 -xzf influxdb3-core-3.6.0_linux_amd64.tar.gz \
+# # VictoriaMetrics
+RUN cd /tmp && mkdir -p /opt/VM/ && wget -q https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.106.0/victoria-metrics-linux-amd64-v1.106.0.tar.gz \
+    && tar -C /opt/VM -xzf victoria-metrics-linux-amd64-v1.106.0.tar.gz \
     && rm -rf /tmp/*
 
-ENV PATH=/opt/influxdb3/influxdb3-core-3.6.0:$PATH
+ENV PATH=/opt/VM:$PATH
 
 
 WORKDIR /workspace
