@@ -5,7 +5,7 @@
 ## Key Features
 
 - **🚀 Out-of-the-Box Experience**
-  Get started immediately with minimal configuration. Check out our [examples](./example/) to see how easy it is to start.
+  Get started immediately with minimal configuration. Check out our [quick_start](./doc/quick_start.md) to see how easy it is.
 
 - **🔌 Broad Framework Support**
   Seamlessly integrates with popular model serving systems, including:
@@ -25,8 +25,26 @@
   Utilizes **VictoriaMetrics** for fast, cost-saving, scalable, and long-term time-series data storage.
 
 - **⚙️ Production-Ready**
-  Designed for high availability (HA) deployments to ensure your monitoring never goes down.
+  Ready for high availability (HA) deployments, delivering a robust, uninterrupted monitoring system.
 
 ## Quick Start
 
+Considering you are working with model server machine, you can simplely use the docker images.
+
+```bash
+docker run -tid --name=momor --network=host --privileged -v ./workspace/:/workspace wingedge777/momor:latest bash
+```
+
+considering you have a model server (one of tritonserver, sglang, vllm, text-embedding-inference) running on host machine, and it expose /metrics endpoint.
+
+```bash
+docker exec -ti momor bash
+
+bash script/main.sh
+```
+
+If you want to monitor a remote server, just change telegraf `urls` config.
+
 ## Advanced Usage
+
+See [advance_usage](./doc/advance_usage.md)

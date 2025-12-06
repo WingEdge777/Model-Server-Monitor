@@ -11,5 +11,5 @@ considering you have a model server (one of tritonserver, sglang, vllm, text-emb
 ```bash
 docker exec -ti momor bash
 
-bash script/start.sh http://$YOU_SERVER_IP:$PORT/metris
+bash script/main.sh http://$YOU_SERVER_IP:$PORT/metris
 ```
