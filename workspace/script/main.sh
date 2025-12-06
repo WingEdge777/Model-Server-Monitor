@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # init mysql for grafana
 service mysql start
 
@@ -10,10 +8,10 @@ mysql -e "CREATE DATABASE grafana; \
         FLUSH PRIVILEGES;"
 
 
-# init influxdb3
-cd influxdb3
+# init VictoriaMetrics
+cd VM
 bash start.sh
-
+cd ..
 
 # run telegraf
 cd telegraf
@@ -26,4 +24,5 @@ cd grafana
 cp -r dashboards/* /var/lib/grafana/dashboards/
 bash start.sh
 
+echo "fire up! visit the dashboard at http://localhost:3131"
 

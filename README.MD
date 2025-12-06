@@ -22,11 +22,11 @@
   Features stunning dashboards and proactive alerting built on top of **Grafana**, giving you deep insights into your model performance.
 
 - **💾 High-Performance Storage**
-  Utilizes **InfluxDB v3** for efficient, scalable, and long-term time-series data storage.
+  Utilizes **VictoriaMetrics** for fast, cost-saving, scalable, and long-term time-series data storage.
 
 - **⚙️ Production-Ready**
   Designed for high availability (HA) deployments to ensure your monitoring never goes down.
 
-## quick start
+## Quick Start
 
-##
+## Advanced Usage

@@ -1,0 +1,1 @@
+victoria-metrics-prod -storageDataPath=./vm-data -retentionPeriod=60d -httpListenAddr=:8428 > vm.log 2>&1 &

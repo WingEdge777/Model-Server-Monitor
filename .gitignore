@@ -44,3 +44,5 @@ reports/
 
 ### PyCharm ###
 __pycache__/
+
+*.log
