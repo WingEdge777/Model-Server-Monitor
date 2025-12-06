@@ -21,8 +21,8 @@ cd ..
 
 # run grafana
 cd grafana 
-cp -r dashboards/* /var/lib/grafana/dashboards/
 bash start.sh
+cd ..
 
 echo "fire up! visit the dashboard at http://localhost:3131"
 

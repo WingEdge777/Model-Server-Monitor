@@ -46,3 +46,4 @@ reports/
 __pycache__/
 
 *.log
+data/
