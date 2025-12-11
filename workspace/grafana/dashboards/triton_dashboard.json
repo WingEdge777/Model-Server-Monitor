@@ -29,8 +29,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -113,8 +113,8 @@
         {
           "alias": "$tag_model",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -165,8 +165,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -250,8 +250,8 @@
         {
           "alias": "$tag_model",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"nv_inference_request_duration_us\"), 1s) /\n    non_negative_derivative(SUM(\"nv_inference_exec_count\"), 1s)\nFROM \"prome_triton\"\nWHERE $timeFilter\nGROUP BY time(1s), \"model\"::tag",
           "rawQuery": true,
@@ -264,8 +264,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -349,8 +349,8 @@
         {
           "alias": "$tag_model",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT non_negative_derivative(last(\"nv_inference_request_failure\"), 1s) / non_negative_derivative(last(\"nv_inference_count\"), 1s)\nFROM \"prome_triton\"\nWHERE $timeFilter\nGROUP BY time(1s), \"model\"::tag",
           "rawQuery": true,
@@ -363,8 +363,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -450,8 +450,8 @@
         {
           "alias": "$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -509,8 +509,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -593,8 +593,8 @@
         {
           "alias": "$tag_model",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -643,8 +643,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -727,8 +727,8 @@
         {
           "alias": "$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -791,8 +791,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "description": "",
       "fieldConfig": {
@@ -895,8 +895,8 @@
         {
           "alias": "$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -954,8 +954,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -1057,8 +1057,8 @@
         {
           "alias": "$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -1122,8 +1122,8 @@
           "value": "http://10.45.125.111:8002/metrics"
         },
         "datasource": {
-          "type": "influxdb",
-          "uid": "ef3ruoe9x3nr4b"
+          "type": "prometheus",
+          "uid": "vm_local"
         },
         "definition": "SHOW TAG VALUES FROM \"prome_triton\" WITH KEY = \"url\" WHERE time > now() - 30s",
         "description": "instance url",

@@ -29,8 +29,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -113,8 +113,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"vllm:request_decode_time_seconds_sum\"), 1s) /\n    non_negative_derivative(SUM(\"vllm:request_decode_time_seconds_count\"), 1s)\nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -127,8 +127,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -212,8 +212,8 @@
         {
           "alias": "$tag_model_name",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -264,8 +264,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -347,8 +347,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(last(\"vllm:time_to_first_token_seconds_count\"), 1s) \nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -361,8 +361,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "description": "",
       "fieldConfig": {
@@ -478,8 +478,8 @@
         {
           "alias": "$tag_url.__.$tag_model_name",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -532,8 +532,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -616,8 +616,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"vllm:time_to_first_token_seconds_sum\"), 1s) /\n    non_negative_derivative(SUM(\"vllm:time_to_first_token_seconds_count\"), 1s)\nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -630,8 +630,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -715,8 +715,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -765,8 +765,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -850,8 +850,8 @@
         {
           "alias": "$tag_model_name._.$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"vllm:inter_token_latency_seconds_sum\"), 1s) /\n    non_negative_derivative(SUM(\"vllm:inter_token_latency_seconds_count\"), 1s)\nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -864,8 +864,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -948,8 +948,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"vllm:request_prefill_time_seconds_sum\"), 1s) /\n    non_negative_derivative(SUM(\"vllm:request_prefill_time_seconds_count\"), 1s)\nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -962,8 +962,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -1046,8 +1046,8 @@
         {
           "alias": "$tag_model_name._.$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "query": "SELECT\n    non_negative_derivative(SUM(\"vllm:request_generation_tokens_sum\"), 1s) /\n    non_negative_derivative(SUM(\"vllm:request_generation_tokens_count\"), 1s)\nFROM \"prome_vllm\"\nWHERE $timeFilter  \nGROUP BY time(1s), \"model_name\"::tag,\"url\"::tag",
           "rawQuery": true,
@@ -1060,8 +1060,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "description": "",
       "fieldConfig": {
@@ -1220,8 +1220,8 @@
         {
           "alias": "$tag_model_name._.$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -1280,8 +1280,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -1364,8 +1364,8 @@
         {
           "alias": "$tag_model_name._.$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
@@ -1420,8 +1420,8 @@
     },
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "ef3ruoe9x3nr4b"
+        "type": "prometheus",
+        "uid": "vm_local"
       },
       "fieldConfig": {
         "defaults": {
@@ -1504,8 +1504,8 @@
         {
           "alias": "$tag_model_name._.$tag_url",
           "datasource": {
-            "type": "influxdb",
-            "uid": "ef3ruoe9x3nr4b"
+            "type": "prometheus",
+            "uid": "vm_local"
           },
           "groupBy": [
             {
