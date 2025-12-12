@@ -1,6 +1,6 @@
 # MoMor
 
-**MoMor** (**Mo**del service **Mo**nito**r**) is an out-of-the-box monitoring system deployment designed for popular model serving frameworks. It provides comprehensive observability and flexible alerting for your model serving system.
+**MoMor** (**Mo**del service **Mo**nito**r**) is an out-of-the-box monitoring system deployment for popular model serving frameworks. It provides comprehensive observability and flexible alerting for your model service.
 
 ## Key Features
 
