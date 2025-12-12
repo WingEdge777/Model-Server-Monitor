@@ -20,7 +20,7 @@
     - welcome PRs
 
 - **🛡️ Robust Data Collection**
-  Leverages the **OpenGraf Agent** for reliable and efficient metrics scraping and aggregation.
+  Leverages the **Telegraf Agent** for reliable and efficient metrics scraping and aggregation.
 
 - **📊 Elegant Observability**
   Features stunning dashboards and proactive alerting built on top of **Grafana**, giving you deep insights into your model performance.
