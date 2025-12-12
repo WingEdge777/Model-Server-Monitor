@@ -978,7 +978,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "SGLang Dashboard",
-  "uid": "sglang-dashboard",
+  "title": "SGLang Monitor",
+  "uid": "SGLang Monitor",
   "version": 11
 }

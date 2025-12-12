@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
     for file in files:
         import_dashboard(file)
-    print("Done!, visit grafana at : localhost:3131")
+    print("Done!, visit grafana at : 127.0.0.1:3131")

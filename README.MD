@@ -52,3 +52,7 @@ If you want to monitor a remote server, just change telegraf `urls` config.
 ## Advanced Usage
 
 See [advance_usage](./doc/advance_usage.md)
+
+## Acknowledgements
+
+Thanks to the model serving frameworks open-source community for their invaluable contributions. Special thanks to the creators of Grafana, VictoriaMetrics, and Telegraf. This project is built upon their excellent work.

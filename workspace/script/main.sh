@@ -3,8 +3,8 @@
 service mysql start
 
 mysql -e "CREATE DATABASE grafana; \
-        CREATE USER 'user'@'localhost' IDENTIFIED BY '12345678'; \
-        GRANT ALL PRIVILEGES ON grafana.* TO 'user'@'localhost'; \
+        CREATE USER 'user'@'127.0.0.1' IDENTIFIED BY '12345678'; \
+        GRANT ALL PRIVILEGES ON grafana.* TO 'user'@'127.0.0.1'; \
         FLUSH PRIVILEGES;"
 
 
