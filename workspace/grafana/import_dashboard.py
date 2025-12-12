@@ -68,7 +68,7 @@ def import_dashboard(file_path):
 if __name__ == "__main__":
     wait_for_grafana()
 
-    files = glob.glob("./dashboards/*.json")
+    files = glob.glob("./dashboard_templates/*.json")
 
     for file in files:
         import_dashboard(file)

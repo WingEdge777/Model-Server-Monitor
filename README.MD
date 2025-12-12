@@ -1,6 +1,6 @@
 # MoMor
 
-**MoMor** (**Mo**del service **Mo**nito**r**) is an out-of-the-box monitoring solution designed for popular model serving frameworks. It provides comprehensive observability and robust alerting for your model serving infrastructure.
+**MoMor** (**Mo**del service **Mo**nito**r**) is an out-of-the-box monitoring system deployment designed for popular model serving frameworks. It provides comprehensive observability and flexible alerting for your model serving system.
 
 ## Key Features
 
@@ -9,11 +9,15 @@
 
 - **🔌 Broad Framework Support**
   Seamlessly integrates with popular model serving systems, including:
-  - Triton Inference Server
-  - SGLang
-  - vLLM
-  - Text Embeddings Inference (TEI)
+  - [x] Triton Inference Server
+  - [x] SGLang
+    - copied SGLang demo
+  - [x] vLLM
+    - copied from vLLM demo
+  - [ ] Text Embeddings Inference (TEI)
+    - TODO
   - *Any service exposing a Prometheus metrics endpoint*
+    - welcome PRs
 
 - **🛡️ Robust Data Collection**
   Leverages the **OpenGraf Agent** for reliable and efficient metrics scraping and aggregation.
