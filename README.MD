@@ -33,7 +33,7 @@
 
 ## Quick Start
 
-Considering you are working with model server machine, you can simplely use the docker images.
+Simplely use the docker images.
 
 ```bash
 docker run -tid --name=momor --network=host --privileged -v ($pwd)/workspace/:/workspace wingedge777/momor:latest bash
